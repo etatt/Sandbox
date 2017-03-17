@@ -1,13 +1,25 @@
-'''Eriq '' Tatti'''
+'''Eriq Tatti'''
 
 def main():
-    name = input("please enter your name :")
+    name = get_name()
 
+    letters = format_name(name)
+
+    print(letters)
+
+
+def format_name(name):
+    for char in name:
+        letters = name[1::2]
+    return letters
+
+
+def get_name():
+    name = input("please enter your name: ")
     while name == "":
         print("invalid name!!!!!!!!")
-        name = input("please enter your name :")
+        name = input("please enter your name: ")
+    return name
 
-    for char in range (len(name)):
-        print("{}".format(name[::2]), end=". ")
 
 main()
